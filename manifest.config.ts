@@ -1,0 +1,32 @@
+import { defineManifest } from "@crxjs/vite-plugin";
+import pkg from "./package.json";
+
+export default defineManifest({
+	manifest_version: 3,
+	name: pkg.name,
+	version: pkg.version,
+	permissions: ["storage"],
+	web_accessible_resources: [
+		{
+			resources: ["src/assets/fonts/*.woff2", "src/assets/fonts/*.ttf"],
+			matches: ["*://chat.deepseek.com/*", "*://claude.ai/*"],
+		},
+	],
+	icons: {
+		48: "public/logo-48.png",
+		170: "public/logo-170.png",
+	},
+	action: {
+		default_icon: {
+			48: "public/logo-48.png",
+			170: "public/logo-170.png",
+		},
+		default_popup: "src/popup/index.html",
+	},
+	content_scripts: [
+		{
+			matches: ["*://chat.deepseek.com/*", "*://claude.ai/*"],
+			js: ["src/content/index.ts", "src/content/deepseek/rtl.ts"],
+		},
+	],
+});

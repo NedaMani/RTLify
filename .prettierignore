@@ -1,0 +1,12 @@
+node_modules
+
+*.min.js
+*.min.css
+
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.svg
+*.pdf
