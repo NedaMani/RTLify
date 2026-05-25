@@ -67,7 +67,6 @@ export default function FontSelector() {
 						>
 							<option>Vazirmatn</option>
 							<option>Arad</option>
-							<option>Sahel</option>
 						</select>
 					</div>
 				</div>
