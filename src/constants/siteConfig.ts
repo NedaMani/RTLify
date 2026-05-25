@@ -1,9 +1,9 @@
 import type { InputAdapter } from "@/utils/RTLManager";
 
-interface SiteRTLConfig {
+type SiteRTLConfig = {
 	messageCSS: string;
 	inputAdapter: InputAdapter;
-}
+};
 
 const setDirection = (el: HTMLElement, dir: "rtl" | "ltr") => {
 	el.style.direction = dir;
@@ -63,6 +63,100 @@ export const SITE_CONFIG: Record<string, SiteRTLConfig> = {
     `,
 		inputAdapter: {
 			selector: '.tiptap.ProseMirror[contenteditable="true"]',
+			getText: (el) => el.textContent ?? "",
+			setDirection,
+		},
+	},
+
+	"chatgpt.com": {
+		messageCSS: `
+      .markdown.prose p,
+      .markdown.prose li,
+      .markdown.prose blockquote,
+      .markdown.prose td,
+      .markdown.prose th,
+      .markdown.prose h1, .markdown.prose h2,
+      .markdown.prose h3, .markdown.prose h4,
+      .markdown.prose h5, .markdown.prose h6 {
+        direction: rtl !important;
+      }
+
+      .markdown.prose pre,
+      .markdown.prose code,
+      .markdown.prose .katex,
+      .markdown.prose .katex-display,
+      .markdown.prose .katex-html,
+      .markdown.prose .katex-mathml {
+        direction: ltr !important;
+      }
+    `,
+		inputAdapter: {
+			selector: 'div.ProseMirror[contenteditable="true"]#prompt-textarea',
+			getText: (el) => el.textContent ?? "",
+			setDirection,
+		},
+	},
+
+	"gemini.google.com": {
+		messageCSS: `
+      .markdown p,
+			.markdown h2,
+			.markdown h3,
+			.markdown h4,
+			.markdown li p,
+			.markdown blockquote p {
+				direction: rtl !important;
+			}
+
+			.markdown table th span,
+			.markdown table td span {
+				direction: rtl !important;
+			}
+
+			.markdown .code-container,
+			.markdown code,
+			.markdown pre {
+				direction: ltr !important;
+			}
+
+			.markdown .math-block,
+			.markdown .math-inline,
+			.markdown .katex,
+			.markdown .katex-html {
+				direction: ltr !important;
+			}
+    `,
+		inputAdapter: {
+			selector: ".ql-editor.textarea",
+			getText: (el) => el.textContent ?? "",
+			setDirection,
+		},
+	},
+
+	"notebooklm.google.com": {
+		messageCSS: `
+			.paragraph.normal,
+			.paragraph.heading1,
+			.paragraph.blockquote,
+			.paragraph.list-item,
+			.paragraph.table-paragraph {
+				direction: rtl !important;
+			}
+
+			code-block-element-view pre,
+			code-block-element-view code,
+			.katex,
+			.katex-html
+			.code {
+				direction: ltr !important;
+			}
+
+			.code {
+				unicode-bidi: embed;
+			}
+    `,
+		inputAdapter: {
+			selector: "textarea.query-box-input",
 			getText: (el) => el.textContent ?? "",
 			setDirection,
 		},

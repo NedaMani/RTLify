@@ -25,11 +25,11 @@ export function injectRTLStyles(css: string) {
 	document.head.appendChild(style);
 }
 
-export interface InputAdapter {
+export type InputAdapter = {
 	selector: string;
 	getText: (el: Element) => string;
 	setDirection: (el: HTMLElement, dir: "rtl" | "ltr") => void;
-}
+};
 
 function applySmartDirection(el: HTMLElement, adapter: InputAdapter) {
 	const dir = detectDirection(adapter.getText(el));
@@ -58,4 +58,8 @@ export function initSmartInput(adapter: InputAdapter) {
 
 	scan();
 	setInterval(scan, 500);
+}
+
+export function removeRTLStyles() {
+	document.getElementById(RTL_STYLE_ID)?.remove();
 }

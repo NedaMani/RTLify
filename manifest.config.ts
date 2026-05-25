@@ -9,7 +9,13 @@ export default defineManifest({
 	web_accessible_resources: [
 		{
 			resources: ["src/assets/fonts/*.woff2", "src/assets/fonts/*.ttf"],
-			matches: ["*://chat.deepseek.com/*", "*://claude.ai/*"],
+			matches: [
+				"*://chat.deepseek.com/*",
+				"*://claude.ai/*",
+				"*://chatgpt.com/*",
+				"*://gemini.google.com/*",
+				"*://notebooklm.google.com/*",
+			],
 		},
 	],
 	icons: {
@@ -25,8 +31,14 @@ export default defineManifest({
 	},
 	content_scripts: [
 		{
-			matches: ["*://chat.deepseek.com/*", "*://claude.ai/*"],
-			js: ["src/content/index.ts", "src/content/deepseek/rtl.ts"],
+			matches: [
+				"*://chat.deepseek.com/*",
+				"*://claude.ai/*",
+				"*://chatgpt.com/*",
+				"*://gemini.google.com/*",
+				"*://notebooklm.google.com/*",
+			],
+			js: ["src/content/index.ts"],
 		},
 	],
 });
