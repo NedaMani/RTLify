@@ -37,13 +37,6 @@ export function injectFonts() {
     html.rtl-font-enabled *:not(pre):not(code):not(pre *):not(code *):not(svg):not(svg *):not(gem-icon):not(gem-icon *):not(mat-icon):not(mat-icon *):not(.mat-icon):not(.lumi-symbols):not(.mat-ligature-font):not(.material-symbols-outlined) {
       font-family: var(--rtl-chat-font), system-ui, sans-serif !important;
     }
-
-    html.rtl-font-enabled pre,
-    html.rtl-font-enabled code,
-    html.rtl-font-enabled pre *,
-    html.rtl-font-enabled code * {
-      font-family: ui-monospace, "Cascadia Code", "Source Code Pro", monospace !important;
-    }
   `;
 
 	document.head.appendChild(style);
