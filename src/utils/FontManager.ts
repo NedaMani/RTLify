@@ -19,25 +19,23 @@ export function injectFonts() {
       font-family: "Vazirmatn";
       src: url("${chrome.runtime.getURL("src/assets/fonts/Vazirmatn.woff2")}") format("woff2");
       font-display: swap;
+      unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
     }
     @font-face {
       font-family: "Sahel";
       src: url("${chrome.runtime.getURL("src/assets/fonts/Sahel.woff2")}") format("woff2");
       font-display: swap;
+      unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
     }
     @font-face {
       font-family: "Arad";
       src: url("${chrome.runtime.getURL("src/assets/fonts/Arad.woff2")}") format("woff2");
       font-display: swap;
-    }
-    @font-face {
-      font-family: "Heebo";
-      src: url("${chrome.runtime.getURL("src/assets/fonts/Heebo.ttf")}") format("truetype");
-      font-display: swap;
+      unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
     }
 
-    html.rtl-font-enabled *:not(pre):not(code):not(pre *):not(code *) {
-      font-family: var(--rtl-chat-font, sans-serif) !important;
+    html.rtl-font-enabled *:not(pre):not(code):not(pre *):not(code *):not(svg):not(svg *):not(gem-icon):not(gem-icon *):not(mat-icon):not(mat-icon *):not(.mat-icon):not(.lumi-symbols):not(.mat-ligature-font):not(.material-symbols-outlined) {
+      font-family: var(--rtl-chat-font), system-ui, sans-serif !important;
     }
 
     html.rtl-font-enabled pre,
