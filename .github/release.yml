@@ -1,0 +1,49 @@
+name: Create GitHub Release
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  build-and-release:
+    name: Build and Release Extension
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build extension
+        run: npm run build
+
+      - name: Prepare release files
+        run: |
+          mkdir temp-release
+          cp -r dist/* temp-release/
+          cd temp-release
+          sudo apt-get update
+          sudo apt-get install -y rar
+          RAR_NAME="extension-${GITHUB_REF_NAME}.rar"
+          rar a "../$RAR_NAME" *
+          cd ..
+          echo "RAR_FILE=$RAR_NAME" >> $GITHUB_ENV
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ env.RAR_FILE }}
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
