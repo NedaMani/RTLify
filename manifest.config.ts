@@ -1,11 +1,27 @@
 import { defineManifest } from "@crxjs/vite-plugin";
 import pkg from "./package.json";
 
+const isFirefox = process.env.VITE_BROWSER === "firefox";
+
 export default defineManifest({
 	manifest_version: 3,
+
 	name: pkg.name,
 	version: pkg.version,
+
 	permissions: ["storage"],
+
+	...(isFirefox && {
+		browser_specific_settings: {
+			gecko: {
+				id: "rtl-chat@example.com",
+				data_collection_permissions: {
+					required: [],
+				},
+			},
+		},
+	}),
+
 	web_accessible_resources: [
 		{
 			resources: ["src/assets/fonts/*.woff2", "src/assets/fonts/*.ttf"],
@@ -18,10 +34,12 @@ export default defineManifest({
 			],
 		},
 	],
+
 	icons: {
 		48: "public/logo-48.png",
 		170: "public/logo-170.png",
 	},
+
 	action: {
 		default_icon: {
 			48: "public/logo-48.png",
@@ -29,6 +47,7 @@ export default defineManifest({
 		},
 		default_popup: "src/popup/index.html",
 	},
+
 	content_scripts: [
 		{
 			matches: [
