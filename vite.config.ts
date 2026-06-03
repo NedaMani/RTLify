@@ -25,7 +25,7 @@ export default defineConfig(() => {
 
 			zip({
 				outDir: "release",
-				outFileName: `rtlify-${browser}-${name}-${version}.zip`,
+				outFileName: `${browser}-${name}-${version}.zip`,
 			}),
 		],
 	};
