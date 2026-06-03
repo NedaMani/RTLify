@@ -5,6 +5,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite",
+		"build": "pnpm run build:chrome && pnpm run build:firefox",
 		"build:chrome": "cross-env VITE_BROWSER=chrome vite build",
 		"build:firefox": "cross-env VITE_BROWSER=firefox vite build",
 		"preview": "vite preview"

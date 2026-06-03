@@ -19,7 +19,7 @@ them.
 
 ## Installation and Usage
 
-### For Chromium-based browsers
+### For Chromium-based browsers(Chrome, Brave, Vivaldi, Opera)
 
 1. Download the latest version from
    **[Releases](https://github.com/NedaMani/RTLify/releases/tag/1.0.0)**.

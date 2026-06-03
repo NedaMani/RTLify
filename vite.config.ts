@@ -5,29 +5,28 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import zip from "vite-plugin-zip-pack";
 
-import manifest from "./manifest.config.js";
+import manifestFactory from "./manifest.config.js";
 import { name, version } from "./package.json";
 
-export default defineConfig({
-	resolve: {
-		alias: {
-			"@": `${path.resolve(__dirname, "src")}`,
-		},
-	},
+export default defineConfig(() => {
+	const browser = process.env.VITE_BROWSER ?? "chrome";
 
-	plugins: [
-		react(),
-		tailwindcss(),
-		crx({ manifest }),
-		zip({
-			outDir: "release",
-			outFileName: `crx-${name}-${version}.zip`,
-		}),
-	],
-
-	server: {
-		cors: {
-			origin: [/chrome-extension:\/\//],
+	return {
+		resolve: {
+			alias: {
+				"@": path.resolve(__dirname, "src"),
+			},
 		},
-	},
+
+		plugins: [
+			react(),
+			tailwindcss(),
+			crx({ manifest: manifestFactory(browser) }),
+
+			zip({
+				outDir: "release",
+				outFileName: `rtlify-${browser}-${name}-${version}.zip`,
+			}),
+		],
+	};
 });
