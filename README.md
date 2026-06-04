@@ -7,7 +7,7 @@
 # RTL and Custom Font Support for Language Models
 
 <div align="center">
-	<img src="introduction/ChromeStore.png" alt="preview" />
+	<img src="introduction/view.png" alt="preview" />
 </div>
 
 With this extension, you can make all mainstream AI chatbots — ChatGPT, Gemini, DeepSeek,
