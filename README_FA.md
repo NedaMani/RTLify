@@ -11,6 +11,10 @@
 با این افزونه، تمام چت‌بات‌های هوش مصنوعی جریان اصلی یعنی ChatGPT، Gemini، DeepSeek، Claude و
 حتی NotebookLM را **راست‌چین** کرده و **فونت دلخواه** خود را روی آن‌ها اعمال کنید.
 
+<div align="center">
+	<img src="introduction/view.png" alt="preview" />
+</div>
+
 ## قابلیت‌ها
 
 - تبدیل خودکار صفحات چت‌بات‌ها به حالت **RTL (راست‌چین)**
