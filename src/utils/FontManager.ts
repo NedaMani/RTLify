@@ -18,19 +18,17 @@ export function injectFonts() {
     @font-face {
       font-family: "Vazirmatn";
       src: url("${chrome.runtime.getURL("src/assets/fonts/Vazirmatn-VF.woff2")}") format("woff2-variations");
-      unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
       font-display: swap;
 			font-weight: 100 900;
     }
     @font-face {
       font-family: "Arad";
       src: url("${chrome.runtime.getURL("src/assets/fonts/Arad-VF.woff2")}") format("woff2-variations");
-      unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
       font-display: swap;
 			font-weight: 100 900;
     }
 
-    html.rtl-font-enabled *:not(pre):not(code):not(pre *):not(code *):not(svg):not(svg *):not(gem-icon):not(gem-icon *):not(mat-icon):not(mat-icon *):not(.mat-icon):not(.lumi-symbols):not(.mat-ligature-font):not(.material-symbols-outlined) {
+    html.rtl-font-enabled *:not(pre):not(code):not(pre *):not(code *):not(svg):not(svg *):not(gem-icon):not(gem-icon *):not(mat-icon):not(mat-icon *):not(.mat-icon):not(.lumi-symbols):not(.mat-ligature-font):not(.material-symbols-outlined):not([data-cds="Icon"]):not([data-cds="Icon"] *) {
       font-family: var(--rtl-chat-font), system-ui, sans-serif !important;
     }
   `;
