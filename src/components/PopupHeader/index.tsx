@@ -24,7 +24,7 @@ export default function Header() {
 			</div>
 
 			<div className="rounded-xl border border-zinc-800 bg-zinc-900 px-2 py-1 text-xs text-zinc-300">
-				v1.0
+				v1.1
 			</div>
 		</div>
 	);
