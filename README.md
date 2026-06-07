@@ -23,6 +23,7 @@ them.
 
 ## Installation and Usage
 
+### [For Firefox-based browsers](https://addons.mozilla.org/en-US/firefox/addon/rtliy)
 ### For Chromium-based browsers(Chrome, Brave, Vivaldi, Opera)
 
 1. Download the latest version from

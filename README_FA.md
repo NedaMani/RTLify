@@ -23,7 +23,7 @@
   - **[Arad](https://github.com/rastikerdar/arad)**
 
 ## نحوه نصب و اجرا
-
+### [برای مرورگرهای مبتنی بر فایرفاکس](https://addons.mozilla.org/en-US/firefox/addon/rtliy)
 ### برای مرورگرهای مبتنی بر کروم
 
 1. آخرین نسخه را از **[Releases](https://github.com/NedaMani/RTLify/releases/tag/1.0.0)** دانلود
