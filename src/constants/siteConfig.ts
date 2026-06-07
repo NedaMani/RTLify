@@ -13,7 +13,7 @@ const setDirection = (el: HTMLElement, dir: "rtl" | "ltr") => {
 export const SITE_CONFIG: Record<string, SiteRTLConfig> = {
 	"chat.deepseek.com": {
 		messageCSS: `
-      .ds-markdown.ds-assistant-message-main-content {
+      .ds-markdown.ds-assistant-message-main-content, .fbb737a4 {
         direction: rtl !important;
       }
       .ds-message .md-code-block,
@@ -48,7 +48,8 @@ export const SITE_CONFIG: Record<string, SiteRTLConfig> = {
       .progressive-markdown blockquote,
       .progressive-markdown h1, .progressive-markdown h2,
       .progressive-markdown h3, .progressive-markdown h4,
-      .progressive-markdown h5, .progressive-markdown h6 {
+      .progressive-markdown h5, .progressive-markdown h6,
+			[data-user-message-bubble="true"] [data-testid="user-message"] {
         direction: rtl !important;
       }
 
@@ -77,7 +78,8 @@ export const SITE_CONFIG: Record<string, SiteRTLConfig> = {
       .markdown.prose th,
       .markdown.prose h1, .markdown.prose h2,
       .markdown.prose h3, .markdown.prose h4,
-      .markdown.prose h5, .markdown.prose h6 {
+      .markdown.prose h5, .markdown.prose h6,
+			.user-message-bubble-color > .max-w-full.min-w-0.\[overflow-wrap\:anywhere\].whitespace-pre-wrap {
         direction: rtl !important;
       }
 
@@ -104,21 +106,16 @@ export const SITE_CONFIG: Record<string, SiteRTLConfig> = {
 			.markdown h3,
 			.markdown h4,
 			.markdown li p,
-			.markdown blockquote p {
-				direction: rtl !important;
-			}
-
+			.markdown blockquote p,
 			.markdown table th span,
-			.markdown table td span {
+			.markdown table td span,
+			[data-test-id="luminous-collapsed-bubble"] .query-text {
 				direction: rtl !important;
 			}
 
 			.markdown .code-container,
 			.markdown code,
-			.markdown pre {
-				direction: ltr !important;
-			}
-
+			.markdown pre,
 			.markdown .math-block,
 			.markdown .math-inline,
 			.markdown .katex,
@@ -139,7 +136,8 @@ export const SITE_CONFIG: Record<string, SiteRTLConfig> = {
 			.paragraph.heading1,
 			.paragraph.blockquote,
 			.paragraph.list-item,
-			.paragraph.table-paragraph {
+			.paragraph.table-paragraph,
+			mat-card-content.from-user-message-inner-content .message-text-content {
 				direction: rtl !important;
 			}
 
@@ -157,6 +155,36 @@ export const SITE_CONFIG: Record<string, SiteRTLConfig> = {
     `,
 		inputAdapter: {
 			selector: "textarea.query-box-input",
+			getText: (el) => el.textContent ?? "",
+			setDirection,
+		},
+	},
+
+	"grok.com": {
+		messageCSS: `
+			p.break-words,
+			h2.font-semibold,
+			h3.font-semibold,
+			li.break-words,
+			blockquote > p.break-words,
+			th.break-words,
+			td.break-words,
+			[data-testid="user-message"] {
+				direction: rtl !important;
+			}
+
+			pre.shiki,
+			pre.shiki code,
+			pre.shiki .line,
+			span.katex,
+			span.katex-html,
+			span.katex-mathml,
+			span.text-sm.px-1.rounded-sm {
+				direction: ltr !important;
+			}
+    `,
+		inputAdapter: {
+			selector: "",
 			getText: (el) => el.textContent ?? "",
 			setDirection,
 		},

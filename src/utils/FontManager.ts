@@ -3,8 +3,6 @@ export const FONT_STYLE_ID = "rtl-font-style";
 export const FONT_MAP: Record<string, string> = {
 	Vazirmatn: `"Vazirmatn", system-ui, sans-serif`,
 	Arad: `"Arad", system-ui, sans-serif`,
-	Sahel: `"Sahel", system-ui, sans-serif`,
-	Heebo: `"Heebo", system-ui, sans-serif`,
 };
 
 export function injectFonts() {

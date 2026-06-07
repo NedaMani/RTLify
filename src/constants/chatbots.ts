@@ -3,7 +3,7 @@ export const chatbotLinks = {
 	Claude: "https://claude.ai",
 	DeepSeek: "https://chat.deepseek.com",
 	Gemini: "https://gemini.google.com",
-	Grok: "hthttps://grok.com",
+	Grok: "https://grok.com",
 	NotebookLM: "https://notebooklm.google.com",
 };
 
