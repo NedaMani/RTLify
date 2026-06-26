@@ -71,6 +71,7 @@ export const SITE_CONFIG: Record<string, SiteRTLConfig> = {
 
 	"chatgpt.com": {
 		messageCSS: `
+			.markdown.prose,
       .markdown.prose p,
       .markdown.prose li,
       .markdown.prose blockquote,
@@ -78,18 +79,20 @@ export const SITE_CONFIG: Record<string, SiteRTLConfig> = {
       .markdown.prose th,
       .markdown.prose h1, .markdown.prose h2,
       .markdown.prose h3, .markdown.prose h4,
-      .markdown.prose h5, .markdown.prose h6,
-			.user-message-bubble-color > .max-w-full.min-w-0.\[overflow-wrap\:anywhere\].whitespace-pre-wrap {
+      .markdown.prose h5, .markdown.prose h6 {
         direction: rtl !important;
       }
 
       .markdown.prose pre,
+			.markdown.prose pre *,
+			.markdown.prose #code-block-viewer,
       .markdown.prose code,
       .markdown.prose .katex,
       .markdown.prose .katex-display,
       .markdown.prose .katex-html,
       .markdown.prose .katex-mathml {
         direction: ltr !important;
+				unicode-bidi: isolate;
       }
     `,
 		inputAdapter: {
