@@ -8,8 +8,7 @@
 
 # پشتیبانی از RTL و فونت دلخواه در مدل‌های زبانی
 
-با این افزونه، تمام چت‌بات‌های هوش مصنوعی جریان اصلی یعنی ChatGPT، Gemini، DeepSeek، Claude و
-حتی NotebookLM را **راست‌چین** کرده و **فونت دلخواه** خود را روی آن‌ها اعمال کنید.
+با این افزونه، تمام چت‌بات‌های هوش مصنوعی جریان اصلی یعنی ChatGPT، Gemini، DeepSeek، Claude، NotebookLM و DuckAI را **راست‌چین** کرده و **فونت دلخواه** خود را روی آن‌ها اعمال کنید.
 
 <div align="center">
 	<img src="introduction/view.png" alt="preview" />

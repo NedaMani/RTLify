@@ -1,4 +1,4 @@
-import { chatbotLinks, ChatbotLinksType } from "@/constants/chatbots";
+import { ChatbotLinksType, chatbotLinks } from "@/constants/chatbots";
 
 export default function Footer() {
 	return (

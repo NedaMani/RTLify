@@ -1,5 +1,5 @@
-import Icon from "@/components/Icon";
 import { useEffect, useState } from "react";
+import Icon from "@/components/Icon";
 
 export default function FontSelector() {
 	const [enabled, setEnabled] = useState(true);

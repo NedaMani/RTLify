@@ -5,6 +5,7 @@ export const chatbotLinks = {
 	Gemini: "https://gemini.google.com",
 	Grok: "https://grok.com",
 	NotebookLM: "https://notebooklm.google.com",
+	Duck: "https://duck.ai",
 };
 
 export type ChatbotLinksType = Array<keyof typeof chatbotLinks>;

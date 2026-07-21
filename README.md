@@ -7,7 +7,7 @@
 # RTL and Custom Font Support for Language Models
 
 With this extension, you can make all mainstream AI chatbots — ChatGPT, Gemini, DeepSeek,
-Claude, and even NotebookLM — **right-to-left (RTL)** and apply your **preferred custom font** to
+Claude, NotebookLM, DuckAI — **right-to-left (RTL)** and apply your **preferred custom font** to
 them.
 
 <div align="center">

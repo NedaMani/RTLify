@@ -1,6 +1,6 @@
-import { initFontManager } from "@/utils/FontManager";
-import { injectRTLStyles, initSmartInput, removeRTLStyles } from "@/utils/RTLManager";
 import { SITE_CONFIG } from "@/constants/siteConfig";
+import { initFontManager } from "@/utils/FontManager";
+import { initSmartInput, injectRTLStyles, removeRTLStyles } from "@/utils/RTLManager";
 
 initFontManager();
 

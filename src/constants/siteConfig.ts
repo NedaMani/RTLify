@@ -192,4 +192,43 @@ export const SITE_CONFIG: Record<string, SiteRTLConfig> = {
 			setDirection,
 		},
 	},
+	"duck.ai": {
+		messageCSS: `
+			[data-streamdown="heading-1"],
+			[data-streamdown="heading-2"],
+			[data-streamdown="heading-3"],
+			[data-streamdown="heading-4"],
+			[data-streamdown="heading-5"],
+			[data-streamdown="heading-6"],
+			p,
+			[data-streamdown="list-item"],
+			blockquote,
+			[data-streamdown="table-header-cell"],
+			[data-streamdown="table-cell"] {
+				direction: rtl;
+				text-align: right;
+			}
+
+			/* Keep code and math LTR */
+			[data-streamdown="inline-code"],
+			[data-streamdown="code-block"],
+			pre,
+			pre *,
+			code,
+			code *,
+			.katex,
+			.katex *,
+			.katex-display,
+			.katex-display * {
+				direction: ltr;
+				text-align: left;
+				unicode-bidi: isolate;
+			}
+		`,
+		inputAdapter: {
+			selector: 'textarea[name="user-prompt"]',
+			getText: (el) => el.textContent ?? "",
+			setDirection,
+		},
+	},
 };

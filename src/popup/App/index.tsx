@@ -1,7 +1,7 @@
-import Header from "@/components/PopupHeader";
-import Footer from "@/components/PopupFooter";
-import RTLSwitch from "@/components/RTLSwitch";
 import FontSelector from "@/components/FontSelector";
+import Footer from "@/components/PopupFooter";
+import Header from "@/components/PopupHeader";
+import RTLSwitch from "@/components/RTLSwitch";
 
 export default function App() {
 	return (
