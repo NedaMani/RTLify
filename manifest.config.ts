@@ -15,7 +15,7 @@ export default function manifestFactory(browser: string) {
 		...(isFirefox && {
 			browser_specific_settings: {
 				gecko: {
-					id: "rtl-chat@example.com",
+					id: "alireza3205@gmail.com",
 					data_collection_permissions: {
 						required: ["none"],
 					},
